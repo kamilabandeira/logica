@@ -16,28 +16,34 @@
 
 
 var rs = require('readline-sync');
+
 var numeroDeProdutos = rs.questionInt('Quantos produtos quer comprar? ');
 var precos = [];
-for (var contador = 0; contador < numeroDeProdutos; contador++) {
-	var preco = rs.questionFloat('Diga o preço do produto: ');
+for (var ordem_produto = 1; ordem_produto <= numeroDeProdutos; ordem_produto++) {
+	var preco = rs.questionFloat('Diga o preco do ' + ordem_produto + 'o produto: ');
 	precos.push(preco);
 }
+
 // console.log('Preços: ' + precos);
-var dinheiroDadoAoCaixa = rs.questionInt('Dê dinheiro para o caixa (não aceitamos moedas): ');
+var dinheiroDadoAoCaixa = rs.questionInt('De dinheiro para o caixa (nao aceitamos moedas): ');
 var totalDaCompra = 0;
 for (var contador = 0; contador < precos.length; contador++) {
 	var precoDoProdutoAtual = precos[contador];
-	console.log(`Produto ${contador}: R$${precoDoProdutoAtual}`);
-	var somaAcumuladaDosPrecos = totalDaCompra + precoDoProdutoAtual;
-	totalDaCompra = somaAcumuladaDosPrecos;
+	var ordem_produto = contador + 1 
+
+	console.log(`Produto ${ordem_produto}: R$${precoDoProdutoAtual.toFixed(2)}`);
+	totalDaCompra = totalDaCompra + precoDoProdutoAtual;
+	// totalDaCompra = somaAcumuladaDosPrecos;
 }
-console.log('Total da compra: R$' + totalDaCompra);
+console.log('Total da compra: R$' + totalDaCompra.toFixed(2));
+
+
 if (totalDaCompra > dinheiroDadoAoCaixa) {
-	console.log('Não tem dinheiro o suficiente. Fiado só amanhã.');
+	console.log('Nao tem dinheiro o suficiente. Fiado so amanha.');
 } else if (dinheiroDadoAoCaixa > totalDaCompra) {
-	console.log('Você deu mais dinheiro do que o necessário. Espere eu pegar o troco...');
+	console.log('Voce deu mais dinheiro do que o necessario. Espere eu pegar o troco...');
 	var troco = dinheiroDadoAoCaixa - totalDaCompra;
-	console.log(`Toma aqui seus R$${troco} reais de troco! Obrigado por vir.`);
+	console.log(`Toma aqui seus R$${troco.toFixed(2)} reais de troco! Obrigado por vir.`);
 } else {
-	console.log('Você deu o dinheiro exato. Obrigado!');
+	console.log('Voce deu o dinheiro exato. Obrigado!');
 }
