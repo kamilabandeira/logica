@@ -1,10 +1,9 @@
-//Crie um algoritmo que cadastre 3 alunos e diga qual possui a maior idade, se mais de um possuir maior idade 
-//apresentar o nome de todos os que possuem maior idade. Para isso crie uma classe Aluno que receba duas variáveis 
-//no construtor nome e idade e inicialize essas variáveis nas propriedades do objeto. Após isso peça para o usuário 
-//cadastrar o primeiro aluno e solicite nome e idade.  Crie o objeto do aluno e adicione em um array. 
-//Repita esse passo para os outros alunos.  Ao final o algoritmo deve iterar pelo array de alunos  e descobrir 
-//quais são os alunos com maior idade e imprimir seus nomes. 
- 
+//Criar uma função que receba uma coleção de alunos e calcule a média de idade Adicione uma nova função no arquivo 
+//calcula-media.js chamada calculaMediaIdadeAluno(alunos). A função deve receber um array da mesma classe dos alunos 
+//criada na atividade 2.  
+//Após isso a função deve iterar pelos alunos e calcular a média de idade e retornar ela.  Adicione essa função 
+//para ser exportado pelo módulo. Adicione no final do programa da atividade 2 após informar o nome dos alunos com 
+//maior idade também imprimir a média de idade dos alunos utilizando o método calculaMediaIdadeAluno(alunos)
 
 class Aluno {                                       //nomeando minha classe
     constructor(nome_parametro, idade_paramentro){  //especificando o construtor da minha classe
@@ -20,33 +19,25 @@ class Aluno {                                       //nomeando minha classe
         }       
     }
 
-    getIdade() {                                  //fiz um gitIdade para fazer o ex4
+    getIdade() {
         return this.idade
     }
 
 }
 
-// var rs = require('readline-sync');
-
-// var nome_entrada = rs.question("DIgite o nome do aluno 1: ")
-// var idade_entrada = rs.questionInt("DIgite a idade do aluno 1: ")
+const calcula_media = require('../12 - Classes-Construtores-Modulos/calcula-media')
 
 var lista_alunos = []                   //inicializando a lista
 
 var aluno1 = new Aluno("Paulo", 27)     //criando o objeto aluno 1 da lista 
-
 var aluno2 = new Aluno("kamila", 17)    //criando o objeto aluno 2 da lista 
-
 var aluno3 = new Aluno("Zefa", 70)      //criando o objeto aluno 3 da lista 
-
 
 lista_alunos.push(aluno1)               //adicionando o objeto aluno 1 na sua lista alunos
 lista_alunos.push(aluno2)               //adicionando o objeto aluno 2 na sua lista alunos
 lista_alunos.push(aluno3)              //adicionando o objeto aluno 3 na sua lista alunos
 
-// var lista_alunos = [aluno1, aluno2, aluno3]
 // console.log(lista_alunos)
-
 
 // for(i = 0; i < lista_alunos.length; i++){   //roda/itera a lista
 //     var aluno = lista_alunos[i]             //posiçoes que roda na lista
@@ -59,11 +50,5 @@ lista_alunos.push(aluno3)              //adicionando o objeto aluno 3 na sua lis
 // }
 
 
-lista_alunos.forEach(aluno =>{
-    
-    if(aluno.ehMaior()){                    //o objeto aluno esta acessando o metodo ehMaior() da classe Aluno
-        console.log("O aluno " + aluno.nome + " eh maior de idade, pois tem " + aluno.idade + " anos")
-    } else {
-        console.log("O aluno " + aluno.nome + " não eh maior de idade, pois tem " + aluno.idade + " anos")
-    }
-})
+var mediaIdadeAlunos = calcula_media.calculaMediaIdadeAluno(lista_alunos)
+console.log("A media eh: " + mediaIdadeAlunos)

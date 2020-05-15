@@ -2,21 +2,22 @@
 // Utilize o pacote: : ​https://www.npmjs.com/package/median  
 
 
-// npm stall midian  instalar pacote no modulo
+// npm install --save median  instalar pacote no modulo
 
 // "median" : "0.0.2"  pacote que vai estar no modulo 
 
-var median = require("median")  //chamar o pacote 
-var rs = require("readline-sync")
+const median = require("median")                                   //importando minha biblioteca median
+const rs = require("readline-sync")                               //importando minha biblioteca readline-sync
 
-var notas = []:
+var lista_notas = []                                              //crianado minha lista 
 
-console.log("Digite as notas: ")
-for (var i = 0: i < 4: i++) {
-    notas.push(nota):
+
+for (var i = 1; i <= 4; i++) {                                           //criando meu for para ter uma condição de parada
+    var nota_entrada = rs.questionFloat("Digite a " + i + "a nota: ")    //inserindo numero 
+    lista_notas.push(nota_entrada)                                       //incluindo nota de entrada na lista de notas 
 }
 
 
-var mediaCalculada = median(nota);
-console.log("Amedia eh: " + mediaCalculada);
+var mediaCalculada = median(lista_notas)                                 //calculando a media pela função median
+console.log("A media eh: " + mediaCalculada)                             //printando a media
 
