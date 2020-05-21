@@ -3,12 +3,52 @@ class Carro {
 	constructor(marca, modelo, cor) {
 		this.marca = marca;
 		this.modelo = modelo;
-		this.cor = cor;
+        this.cor = cor;
+        this.velocidade = 0
     }
 
     getCor() {
         return this.cor
     }
+
+    acelerar() {
+        this.velocidade = this.velocidade + 10
+
+        var mensagem_retorno = ""
+        if(this.velocidade > 60) {
+            mensagem_retorno = "Velocidade " + this.velocidade + " km/h não permitida, voltando a velocidade para 60 km/h "
+            this.velocidade = 60
+        } else {
+            mensagem_retorno = "A velocidade atual eh: " + this.velocidade + " km/h"
+        }
+
+        return mensagem_retorno
+    }
+
+    freiar() {
+        this.velocidade = this.velocidade - 5
+
+        var mensagem_retorno = ""
+        if(this.velocidade < 0) {
+            mensagem_retorno = "Velocidade " + this.velocidade + " km/h não permitida, voltando a velocidade para 0 km/h "
+            this.velocidade = 0
+        } else {
+            mensagem_retorno = "A velocidade atual eh: " + this.velocidade + " km/h"
+        }
+
+        return mensagem_retorno
+    }
+
+    desligar() {
+        if(this.velocidade == 0) {
+            return true
+        } else {
+            return false           
+        }
+    }
+
+//     FREIA
+//     DESLIGAR
 }
 
 
