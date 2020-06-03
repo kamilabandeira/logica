@@ -1,0 +1,29 @@
+<input type="text" id="caixa">Digite um textinho</input>
+<br>
+<button type="submit" onclick="pegarTexto()">Enviar</button>  <!--quando eu clicar no botão enviar ele vai acionar a função pegar texto -->
+
+<br>
+<br>
+
+<ul id="lista">
+    <!-- 
+    <li> Kamila  </li>
+    <li> Paulo   </li>  
+    -->
+</ul>
+
+<script>
+    function pegarTexto() {
+        var texto_entrada = document.getElementById("caixa").value   //pegando texto do meu input text com meu id caixa 
+        var texto = texto_entrada.split(" ")          //criando a lista texto com as palavras do texto entrada, separada por " "
+
+
+        var ul = document.getElementById("lista")    //pegando o objeto ul(pai) da lista com o id lista  
+        texto.forEach(palavra => {
+            var li = document.createElement('li');   //criando o elemento li da minha tabela (li - list iten) => <li> </li> 
+            li.textContent = palavra                 //colocando o valor dentro da minha tag criada => <li> palavra </li>
+
+            ul.appendChild(li)                       //appendando minha tag li(filha) criada com o valor que eu quero na minha tag ul(pai)      
+        });
+    }
+</script>
