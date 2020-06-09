@@ -1,0 +1,10 @@
+insert into carros(nome, cor, ano, valor) values("corsa", "vermelho", 1990, 5000);
+insert into carros(nome, cor, ano, valor) values("uno", "branco", 1995, 7000);
+insert into carros(nome, cor, ano, valor) values("palio", "cinza", 1999, 9000);
+insert into carros(nome, cor, ano, valor) values("clio", "preto", 1998, 4000);
+insert into carros(nome, cor, ano, valor) values("celta", "vinho", 1993, 8000);
+insert into carros(nome, cor, ano, valor) values("march", "azul", 2020, 50000);
+insert into carros(nome, cor, ano, valor) values("onix", "amarelo", 2001, 55000);
+insert into carros(nome, cor, ano, valor) values("prisma", "verde", 2005, 60000);
+insert into carros(nome, cor, ano, valor) values("HB20", "rosa", 2010, 5000);
+insert into carros(nome, cor, ano, valor) values("honda", "prata", 2015, 5000);
