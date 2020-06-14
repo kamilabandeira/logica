@@ -1,0 +1,33 @@
+<!-- Abra uma caixa de texto pedindo para o usuário inserir a sua idade e, caso essa idade
+seja menor que 18 anos, esse usuário seja redirecionado para a página do Mundo Bita.
+Caso sua idade seja maior que 18 anos, redirecioná-lo para www.pudim.com.br -->
+
+<input type="text" id="idade">Digite sua idade</input>
+<br>
+<button type="submit" onclick="pegarIdade()">Enviar</button>
+
+<script>
+    function pegarIdade() {
+        var input_idade = document.getElementById("idade")
+
+        var idade_entrada = parseInt(input_idade.value)
+        
+
+        if (idade_entrada <= 0 || isNaN( idade_entrada ) ) {                    //tratamento de erro para idades negativas e nao numericas
+
+            alert("Idade " + idade_entrada + " invalida. Digite novamente! ")   //alerta na tela do usuario
+            input_idade.value = ""                                              //limpar o conteudo antigo para por um novo conteudo
+
+        } else {
+
+            if (idade_entrada < 18) {
+            window.open('https://www.mundobita.com.br/', '_blank')             //redirecionar para um site em uma nova aba(blank)
+
+            } else {
+                window.open('http://www.pudim.com.br', '_blank') 
+            }
+
+        }
+    }
+
+</script>

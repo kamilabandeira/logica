@@ -1,0 +1,25 @@
+<!-- No site da Arbyte (www.arbyte.com.br), abra o console e, através dos mecanismos de
+query ensinados na aula, crie uma array chamada social, que receberá as três redes
+sociais da Arbyte contidas no footer do site. Exiba essa array num alert. -->
+
+<!-- 
+info-empresas
+	rede-sociais
+		fa 
+			linkedin
+			instagram
+			facebook
+            youtube 
+-->
+
+
+<script>
+   var rede_sociais = document.getElementsByClassName("info-empresa redes-sociais")
+
+   var filhos = rede_sociais[0].querySelectorAll(".fa")
+
+    filhos.forEach( logo => {
+        alert(logo)
+    })
+
+</script>
